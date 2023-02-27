@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "889906244300",
+    "project_id": "udemyzeft",
+    "storage_bucket": "udemyzeft.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:889906244300:android:a127f3731acf047b997069",
+        "android_client_info": {
+          "package_name": "com.example.project_four"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "889906244300-7pcm28j17ljle3binkqkt5v1h1jfrp5i.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.project_four",
+            "certificate_hash": "c770c50261cf835c1b58f4f4793898657f5b1e77"
+          }
+        },
+        {
+          "client_id": "889906244300-7oht987lspo131btj6l1afik3col22rh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDdNIFpE3KVDfKlaK8UWqRDd7mfS9mhTX8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "889906244300-7oht987lspo131btj6l1afik3col22rh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
