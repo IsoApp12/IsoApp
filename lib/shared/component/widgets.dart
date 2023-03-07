@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart' hide BoxDecoration, BoxShadow;
 import 'package:flutter_inset_box_shadow/flutter_inset_box_shadow.dart';
-import 'package:project_four/presentation/colorManger.dart';
+import 'package:project_four/modules/ResultScreen.dart';
+import 'package:project_four/shared/component/colorManger.dart';
 Widget formField({required String labelText,required TextEditingController PasswordContrroller,required TextInputType keyboardType,required IconData prefixIcon,IconData? suffixIcon,})=>
     Padding(
       padding: EdgeInsets.symmetric( horizontal: 15),
@@ -152,3 +153,68 @@ Widget separatorText({String? text})=>
 
     );
 
+Widget CategoryItem(context,IconData? icon,String title)=>
+GestureDetector(
+onTap: (){
+Navigator.push(context, MaterialPageRoute(builder: (context)=>ResultScreen()));
+},
+child:Container(
+height: 170,
+width: 120,
+child: Stack(
+alignment: Alignment.topCenter,
+children: [
+Container(
+
+decoration: BoxDecoration(
+color: Colors.white,
+borderRadius: BorderRadius.circular(25),
+boxShadow: [
+BoxShadow(
+offset: Offset(5,5),
+blurRadius: 20,
+spreadRadius: 0,
+color:Colors.green[200] !
+
+),
+BoxShadow(
+offset: Offset(-10,-20),
+blurRadius: 20,
+spreadRadius: 5,
+color:Colors. white
+
+),
+BoxShadow(
+offset: Offset(10,20),
+blurRadius: 40,
+spreadRadius: 2,
+color:Colors.green[50]!,
+inset:true
+
+),
+BoxShadow(
+offset: Offset(-10,-20),
+blurRadius: 20,
+spreadRadius: 0,
+color:Colors. white,
+inset: true
+
+),
+]
+
+),
+),
+
+Padding(
+padding: const EdgeInsetsDirectional.only( top:20),
+child: Icon(icon,size: 70,color:ColorsManager. defaultColor2,),),
+Padding(
+padding: EdgeInsetsDirectional.only( bottom:20),
+child: Align(
+alignment:Alignment.bottomCenter,
+child: Text('$title',style: TextStyle(fontSize: 24,fontWeight: FontWeight.bold,color:ColorsManager. defaultColor),)),
+)
+
+],
+),
+)) ;
