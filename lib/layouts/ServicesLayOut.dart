@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart' hide BoxDecoration, BoxShadow;
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_inset_box_shadow/flutter_inset_box_shadow.dart';
-import 'package:project_four/network/local/ServicesBloc.dart';
-import 'package:project_four/network/local/ServicesStates.dart';
-import 'package:project_four/presentation/colorManger.dart';
+import 'package:project_four/shared/component/colorManger.dart';
+import 'package:project_four/shared/network/local/ServicesBloc.dart';
+import 'package:project_four/shared/network/local/ServicesStates.dart';
 class ServicesLayOut extends StatelessWidget {
   const ServicesLayOut({Key? key}) : super(key: key);
 
