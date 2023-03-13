@@ -4,11 +4,11 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:project_four/models/FireStore/createUser.dart';
-import 'package:project_four/modules/Categories.dart';
-import 'package:project_four/modules/Home.dart';
-import 'package:project_four/modules/SettingScreen.dart';
-import 'package:project_four/modules/SignUp.dart';
-import 'package:project_four/modules/TimeLine.dart';
+import 'package:project_four/modules/customer/Categories.dart';
+import 'package:project_four/modules/customer/HomeScreen.dart';
+import 'package:project_four/modules/customer/SettingScreen.dart';
+import 'package:project_four/modules/register/SignUp.dart';
+import 'package:project_four/modules/customer/TimeLine.dart';
 
 import 'package:project_four/shared/network/local/ServicesStates.dart';
 

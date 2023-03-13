@@ -3,8 +3,8 @@ import 'package:flutter/material.dart' hide BoxDecoration, BoxShadow;
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_inset_box_shadow/flutter_inset_box_shadow.dart';
 
-import 'package:project_four/shared/component/colorManger.dart';
-import 'package:project_four/shared/component/widgets.dart';
+import 'package:project_four/shared/component/styles/colorManger.dart';
+import 'package:project_four/shared/component/components/widgets.dart';
 import 'package:project_four/shared/network/local/ServicesBloc.dart';
 import 'package:project_four/shared/network/local/ServicesStates.dart';
 class TimeLine extends StatelessWidget {
@@ -21,7 +21,7 @@ class TimeLine extends StatelessWidget {
 
             backgroundColor: Colors.white,
             titleSpacing: 70,
-            title:  Text('Discover !',style: TextStyle(fontSize: 30,fontFamily: 'Courgette',color: ColorsManager.defaultColor),),
+            title:  Text('Discover !',style: TextStyle(fontSize: 30,fontFamily: 'Courgette',color: ColorsManager.defaultColorGreen),),
             elevation: 0.0,
           ),
           body:  SingleChildScrollView(

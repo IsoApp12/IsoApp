@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart' hide BoxDecoration, BoxShadow;
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_inset_box_shadow/flutter_inset_box_shadow.dart';
-import 'package:project_four/shared/component/colorManger.dart';
+import 'package:project_four/shared/component/styles/colorManger.dart';
 import 'package:project_four/shared/network/local/ServicesBloc.dart';
 import 'package:project_four/shared/network/local/ServicesStates.dart';
 class ServicesLayOut extends StatelessWidget {
@@ -16,14 +16,17 @@ class ServicesLayOut extends StatelessWidget {
           body: ServicesCubit.get(context).screens[ServicesCubit.get(context).currentIndex],
           bottomNavigationBar: BottomNavigationBar(
             type: BottomNavigationBarType.fixed,
-            backgroundColor: Colors.white,
-            selectedItemColor:ColorsManager.defaultColor2,
-            unselectedItemColor: Colors.grey[600],
+            backgroundColor: ColorsManager.defaultColorGreen,
+            selectedItemColor:ColorsManager.defaultColorYellow,
+            unselectedItemColor: Colors.white,
+            selectedIconTheme: IconThemeData(
+              size: 32
+            ),
             items: [
-              BottomNavigationBarItem(icon: Icon(Icons.home_filled),label:'home',  ),
-              BottomNavigationBarItem(icon: Icon(Icons.category),label:'categories', ),
+              BottomNavigationBarItem(icon: Icon(Icons.home_filled),label:'Home',  ),
+              BottomNavigationBarItem(icon: Icon(Icons.category),label:'Categories', ),
               BottomNavigationBarItem(icon: Icon(Icons.view_timeline),label:'Time line' ),
-              BottomNavigationBarItem(icon: Icon(Icons.settings),label:'settings' ),
+              BottomNavigationBarItem(icon: Icon(Icons.settings),label:'Settings' ),
 
 
             ],

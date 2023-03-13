@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:project_four/modules/OnBoardingScreen.dart';
+import 'package:project_four/modules/customer/OnBoardingScreen.dart';
+import 'package:project_four/shared/component/components/routes.dart';
+import 'package:project_four/shared/component/styles/theme.dart';
 import 'package:project_four/shared/network/local/ServicesBloc.dart';
 import 'package:project_four/shared/network/local/ServicesStates.dart';
 
@@ -27,7 +29,7 @@ class _MyAppState extends State<MyApp> {
           builder: (context,states){
             return MaterialApp(
               debugShowCheckedModeBanner:false,
-
+              theme: MyTheme.light,
               home: onBoardingScreen(),
             );
           },
