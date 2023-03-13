@@ -4,8 +4,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:project_four/layouts/ServicesLayOut.dart';
 
-import 'package:project_four/shared/component/colorManger.dart';
-import 'package:project_four/shared/component/widgets.dart';
+import 'package:project_four/shared/component/styles/colorManger.dart';
+import 'package:project_four/shared/component/components/widgets.dart';
 import 'package:project_four/shared/network/local/ServicesBloc.dart';
 import 'package:project_four/shared/network/local/ServicesStates.dart';
 
@@ -18,7 +18,7 @@ class Register extends StatelessWidget {
   static final TextEditingController phoneController=TextEditingController();
   static final TextEditingController passwordController=TextEditingController();
   static final  formKey=GlobalKey<FormState>();
-  static final Widget text=Text('Register',style: TextStyle(fontFamily: 'Courgette',fontSize: 18,color:ColorsManager. defaultColor),);
+  static final Widget text=Text('Register',style: TextStyle(fontFamily: 'Courgette',fontSize: 18,color:ColorsManager. defaultColorGreen),);
 
   @override
   Widget build(BuildContext context) {
@@ -45,13 +45,13 @@ class Register extends StatelessWidget {
                             child: TextButton(onPressed:(){
                               Navigator.pop(context);
                             },
-                                child: Text('Login ', style: TextStyle(fontFamily: 'Courgette',color: ColorsManager.defaultColor,fontSize: 30),)),
+                                child: Text('Login ', style: TextStyle(fontFamily: 'Courgette',color: ColorsManager.defaultColorGreen,fontSize: 30),)),
                           ),
                           Text('OR ', style: TextStyle(color: Colors.grey[600],fontSize: 15),),
                           Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: TextButton(onPressed:(){
-                            },child: Text('Register  ', style: TextStyle(fontFamily: 'Courgette',color:ColorsManager.defaultColor,fontSize: 30),)),
+                            },child: Text('Register  ', style: TextStyle(fontFamily: 'Courgette',color:ColorsManager.defaultColorGreen,fontSize: 30),)),
                           )
 
                         ],),
@@ -86,7 +86,7 @@ class Register extends StatelessWidget {
                                     );
                                   }
                                 }) ,
-                                fallback: (context) =>Center(child:  CircularProgressIndicator(color:ColorsManager. defaultColor,))) ,
+                                fallback: (context) =>Center(child:  CircularProgressIndicator(color:ColorsManager. defaultColorGreen,))) ,
 
                             SizedBox(height: 30,),
                             Row(

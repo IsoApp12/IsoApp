@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart' hide BoxDecoration, BoxShadow;
-import 'package:project_four/shared/component/colorManger.dart';
-import 'package:project_four/shared/component/icons.dart';
-import 'package:project_four/shared/component/widgets.dart';
+import 'package:project_four/shared/component/styles/colorManger.dart';
+import 'package:project_four/shared/component/components/icons.dart';
+import 'package:project_four/shared/component/components/widgets.dart';
 
 class categories extends StatelessWidget {
   const categories({Key? key}) : super(key: key);
@@ -13,10 +13,10 @@ class categories extends StatelessWidget {
         appBar: AppBar(
           elevation: 0.0,
           backgroundColor: Colors.white,
-          leading: Icon(Icons.category_outlined,color:ColorsManager. defaultColor2,),
+          leading: Icon(Icons.category_outlined,color:ColorsManager. defaultColorYellow,),
 
           title:  Text('Categories',style: TextStyle(
-            color:ColorsManager.defaultColor,
+            color:ColorsManager.defaultColorGreen,
             fontSize: 26,
             fontFamily: 'Courgette',
 

@@ -4,7 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:project_four/app/MyApp.dart';
 import 'package:flutter/services.dart';
 import 'package:project_four/shared/network/local/CacheHelper.dart';
-import 'package:project_four/shared/component/Constatnts.dart';
+import 'package:project_four/shared/component/components/constatnts.dart';
 import 'shared/network/local/blocObserver.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -12,7 +12,7 @@ void main() async {
   Bloc.observer = MyBlocObserver();
  await CacheHelper.initCache();
   SystemChrome.setSystemUIOverlayStyle(
-    SystemUiOverlayStyle(
+   const  SystemUiOverlayStyle(
         statusBarColor: Colors.white,
       statusBarIconBrightness: Brightness.dark
     )

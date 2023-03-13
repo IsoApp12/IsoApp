@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart' hide BoxDecoration, BoxShadow;
-import 'package:flutter_inset_box_shadow/flutter_inset_box_shadow.dart';
 import 'package:project_four/app/MyApp.dart';
-import 'package:project_four/modules/UserLogin.dart';
-import 'package:project_four/shared/component/colorManger.dart';
+import 'package:project_four/modules/first_screen/first_screen.dart';
+import 'package:project_four/modules/login/customer/UserLoginCustomer.dart';
+import 'package:project_four/shared/component/styles/colorManger.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 class onBoardingModel{
   Widget? image;
@@ -14,8 +14,6 @@ class onBoardingModel{
 
 }
 class onBoardingScreen extends StatefulWidget {
-  onBoardingScreen({Key? key}) : super(key: key);
-
   @override
   State<onBoardingScreen> createState() => _onBoardingScreenState();
 }
@@ -55,14 +53,13 @@ class _onBoardingScreenState extends State<onBoardingScreen> {
               ),
               Row(
                 children: [
-
                   Padding(
                     padding: EdgeInsets.all( 20),
                     child: SmoothPageIndicator(
                       controller: pageController,
                       count: images.length,
                       effect: ExpandingDotsEffect(
-                        activeDotColor:ColorsManager.defaultColor!,
+                        activeDotColor:ColorsManager.defaultColorGreen,
                         expansionFactor: 4,
                         dotColor: Colors.grey,
                         dotHeight: 10,
@@ -75,10 +72,10 @@ class _onBoardingScreenState extends State<onBoardingScreen> {
                     padding: const EdgeInsets.all(25.0),
                     child: FloatingActionButton(
                         child: Icon(Icons.arrow_forward_ios,color: Colors.white,),
-                        backgroundColor:ColorsManager.defaultColor,
+                        backgroundColor:ColorsManager.defaultColorGreen,
                         onPressed: (){
                           if( MyApp(). isLast){
-                            Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (context)=> LoginScreen()), (route) => false);
+                            Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (context)=> FirstScreen()), (route) => false);
                           }else
                           {
                             pageController.nextPage(duration: Duration(milliseconds: 750), curve: Curves.fastLinearToSlowEaseIn);
