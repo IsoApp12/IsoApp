@@ -4,16 +4,14 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:project_four/layouts/ServicesLayOut.dart';
-
-import 'package:google_fonts/google_fonts.dart';
-import 'package:project_four/shared/component/colorManger.dart';
-import 'package:project_four/shared/component/widgets.dart';
+import 'package:project_four/shared/component/styles/colorManger.dart';
+import 'package:project_four/shared/component/components/widgets.dart';
 import 'package:project_four/shared/network/local/ServicesBloc.dart';
 import 'package:project_four/shared/network/local/ServicesStates.dart';
 
 
-class LoginScreen extends StatelessWidget {
-  const   LoginScreen({Key? key}) : super(key: key);
+class LoginScreenCustomer extends StatelessWidget {
+  const   LoginScreenCustomer({Key? key}) : super(key: key);
   static const IconData facebook = IconData(0xe255, fontFamily: 'MaterialIcons');
   static final TextEditingController EmailController= TextEditingController() ;
   static final TextEditingController PassowrdController= TextEditingController() ;
@@ -38,14 +36,14 @@ class LoginScreen extends StatelessWidget {
 
                           },child: Text('Login ', style: TextStyle(
                               fontFamily: 'Courgette',
-                              color: ColorsManager.defaultColor,fontSize: 30),)),
+                              color: ColorsManager.defaultColorGreen,fontSize: 30),)),
                         ),
                         Text('OR ', style: TextStyle(color: Colors.grey[600],fontSize: 15),),
                         Container(
                           padding: EdgeInsets.all(8),
                           child: TextButton(onPressed:(){
                             ServicesCubit.get(context) . NavigateToRegister(context);
-                          },child: Text('Register  ', style: TextStyle(fontFamily: 'Courgette',color:ColorsManager. defaultColor,fontSize: 30),)),
+                          },child: Text('Register  ', style: TextStyle(fontFamily: 'Courgette',color:ColorsManager. defaultColorGreen,fontSize: 30),)),
                         )
 
                       ],),
@@ -65,8 +63,9 @@ class LoginScreen extends StatelessWidget {
                             SizedBox(height: 30,),
                             ConditionalBuilder(
                               condition:states != ServicesLoginLoadingState ,
-                              fallback: (context)=>CircularProgressIndicator(color: ColorsManager.defaultColor,),
-                              builder:( context)=> LoginRegisterButton(formKey:formKey, Text: Text('Login',style: TextStyle(fontFamily: 'Courgette',fontSize: 18,color:ColorsManager.defaultColor)),function: () {
+                              fallback: (context)=>CircularProgressIndicator(color: ColorsManager.defaultColorGreen,),
+                              builder:( context)=> LoginRegisterButton(formKey:formKey, Text: Text('Login',style: TextStyle(fontFamily: 'Courgette',fontSize: 18,color:ColorsManager.defaultColorGreen)),
+                                  function: () {
                                 if (formKey.currentState!.validate()) {
                                   ServicesCubit.get(context).socialLogin(email:EmailController.text ,password:PassowrdController.text );
                                   Navigator.push(context, MaterialPageRoute(builder: (context)=>ServicesLayOut()));
@@ -81,14 +80,14 @@ class LoginScreen extends StatelessWidget {
                                 Text('forget your password ', style: TextStyle(color: Colors.grey[600],fontSize: 15),),
                                 TextButton(onPressed: (){
 
-                                }, child: Text('find your account',style: TextStyle(color: ColorsManager.defaultColor,fontSize: 15),),)
+                                }, child: Text('find your account',style: TextStyle(color: ColorsManager.defaultColorGreen,fontSize: 15),),)
                               ],),
                             SizedBox(height: 5,),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
-                                IconButton(onPressed: (){}, icon: Icon(facebook,color:ColorsManager. defaultColor2,),),
-                                MaterialButton(onPressed: (){}, child:  Icon(FontAwesomeIcons.googlePlusG,color:ColorsManager.defaultColor2,) ,
+                                IconButton(onPressed: (){}, icon: Icon(facebook,),),
+                                MaterialButton(onPressed: (){}, child:  Icon(FontAwesomeIcons.googlePlusG,color:ColorsManager.defaultColorYellow,) ,
                                 ),
 
 

@@ -1,16 +1,12 @@
 import 'dart:async';
 import 'dart:collection';
 import 'package:flutter/material.dart';
-import 'package:flutter/material.dart';
 import 'package:focused_menu/focused_menu.dart';
 import 'package:focused_menu/modals.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
-import 'package:dropdown_button2/dropdown_button2.dart';
-import 'package:project_four/shared/component/colorManger.dart';
+import 'package:project_four/shared/component/styles/colorManger.dart';
 
 class  ResultScreen extends StatefulWidget {
-  const ResultScreen({Key? key}) : super(key: key);
-
   @override
   State<ResultScreen> createState() => _ResultScreenState();
 }
@@ -18,17 +14,12 @@ class  ResultScreen extends StatefulWidget {
 class _ResultScreenState extends State<ResultScreen> {
   final Completer<GoogleMapController> _controller = Completer<GoogleMapController>();
   var markers=HashSet<Marker>();
-
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
-
       body: Stack(
         alignment: Alignment.bottomLeft,
         children: [
-
           GoogleMap(
             initialCameraPosition: CameraPosition(target: LatLng(30.177744638009873, 31.501632278956453),zoom: 8),
             onMapCreated: (googleMapConroller){
@@ -42,7 +33,7 @@ class _ResultScreenState extends State<ResultScreen> {
           ),
           Align(
             alignment: Alignment.topCenter,
-            child: Padding(padding: EdgeInsetsDirectional.only(top: 140,start: 20,end: 20)
+            child: Padding(padding: EdgeInsetsDirectional.only(top: 130,start: 20,end: 20)
               ,child: Container(
                 padding:EdgeInsetsDirectional.only(start: 20) ,
                 height: 55,
@@ -55,15 +46,13 @@ class _ResultScreenState extends State<ResultScreen> {
                     decoration: InputDecoration(
                         prefixIcon: Icon(Icons.search),
                         labelText: 'find worker',
-                        labelStyle: TextStyle(color: ColorsManager.defaultColor),
+                        labelStyle: TextStyle(color: ColorsManager.defaultColorGreen),
                         border:InputBorder.none,
                         suffixIcon:
                         FocusedMenuHolder(
-
                             openWithTap: true,
                             onPressed: (){},
                             menuItems: [
-
                               FocusedMenuItem(
                                   title:FocusedMenuHolder(
                                     openWithTap: true,
@@ -152,7 +141,7 @@ class _ResultScreenState extends State<ResultScreen> {
                               ),
 
                             ],
-                            child: Icon(Icons.settings_input_composite_outlined)))
+                            child: Icon(Icons.settings_input_composite_outlined,color: Colors.black,)))
 
                 ),
               ) ,
@@ -163,14 +152,15 @@ class _ResultScreenState extends State<ResultScreen> {
             padding: const EdgeInsetsDirectional.only(start:30,bottom: 30),
             child: FloatingActionButton(
 
-                backgroundColor:ColorsManager. defaultColor,
+                backgroundColor:ColorsManager. defaultColorGreen,
                 onPressed: (){
                   Navigator.pop(context);
                 },
-                child: Icon(Icons.arrow_back,color: Colors.white             )),
+                child: Icon(Icons.arrow_back,color: Colors.black           )),
           )
         ],
       ),
+
     );
   }
 }
